@@ -58,19 +58,38 @@ local function AddButton(name,fromParent,temp,gi,ci)
 	fromParent.nextSubButtonIndex = fromParent.nextSubButtonIndex + 1;
 	return newFrame;
 end
---[[
+
 function InspectFrame_Show(unit)
-	HideUIPanel(InspectFrame);
-	if ( CanInspect(unit, true) ) then
-		NotifyInspect(unit);
-		InspectFrame.unit = unit;
-		InspectSwitchTabs(1);
-		ShowUIPanel(InspectFrame);
-		InspectFrame_UpdateTalentTab();
-		DisplayInfomation("InspectFrame_Show "..UnitName(unit));
+	if(InspectFrame) then
+		DoInspectFrameShow(unit);
+	else
+		if( IsAddOnLoaded("Blizzard_InspectUI") == nil) then
+			local loaded, reason = LoadAddOn("Blizzard_InspectUI");
+			if( loaded == nil) then
+				DisplayInfomation("窗口初始化失败："..reason);
+			else
+				DoInspectFrameShow(unit);
+			end
+		end
 	end
 end
-]]--
+
+function DoInspectFrameShow(unit)
+	if(InspectFrame) then
+		HideUIPanel(InspectFrame);
+		if ( CanInspect(unit, true) ) then
+			NotifyInspect(unit);
+			InspectFrame.unit = unit;
+			InspectSwitchTabs(1);
+			ShowUIPanel(InspectFrame);
+			InspectFrame_UpdateTalentTab();
+			DisplayInfomation("InspectFrame_Show "..UnitName(unit));
+		end	
+	end
+end
+
+
+
 function InitializeUnBotFrame()
 	DisplayInfomation("开始初始化机器人控制器");
 	if(UnBotFrame.Inited == true) then

@@ -5,7 +5,7 @@ function CommandUnBotSetting(index)
 	OnlineFrame:Hide();
 	NPCFrame:Hide();
 	
-	if (InspectFrame:IsShown()) then
+	if (InspectFrame and InspectFrame:IsShown()) then
 		DisplayInfomation("InspectFrame_Show "..UnitName(InspectFrame.unit)..", Name "..InspectFrame:GetName());
 	end
 end
