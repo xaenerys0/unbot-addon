@@ -111,6 +111,7 @@ UnBotCommandToGroups = {
 [86] = 1,
 [87] = 1,
 [88] = 10,
+[89] = 2,
 };
 
 UnBotIconFiles = {
@@ -203,6 +204,7 @@ UnBotIconFiles = {
 [86] = 74,
 [87] = 3598,
 [88] = 174,
+[89] = 103
 };
 
 UnBotTooltipTitle = {
@@ -295,6 +297,7 @@ UnBotTooltipTitle = {
 [86] = "机器人下线",
 [87] = "机器人上线",
 [88] = "添加全队好友",
+[89] = "机器人练级",
 };
 
 UnBotTooltipHelp = {
@@ -386,13 +389,14 @@ UnBotTooltipHelp = {
 [85] = "重置队伍中所有机器人的当前动作。",
 [86] = "让指定机器人下线。",
 [87] = "让指定机器人下线。",
-[88] = "添加全队机器人为好友。"
+[88] = "添加全队机器人为好友。",
+[89] = "全队机器人自动攻击附近能够提升经验值的怪物。",
 };
 
 UnBotExecuteCommand = {
 [1] = "",
-[2] = ".playerbot bot init=epic",
-[3] = ".playerbot bot init=epic *",
+[2] = ".playerbot bot init=auto",
+[3] = ".playerbot bot init=auto *",
 -- [4] = ".playerbot bot update",
 [5] = ".reset talents",
 -- [6] = ".playerbot bot talent=1",
@@ -478,6 +482,7 @@ UnBotExecuteCommand = {
 [86] = ".playerbot bot remove",
 [87] = ".playerbot bot add",
 -- [88] = "add friends"
+[89] = "grind",
 };
 
 --1 = 不需要选择目标
@@ -574,4 +579,5 @@ UnBotCommandType = {
 [86] = 2,
 [87] = 2,
 [88] = 4,
+[89] = 4,
 };
